@@ -1,60 +1,27 @@
 {
-  "model_name": "Finance_Model",
-  "data_source": "finance_data.csv",
-  "last_updated": "2025-09-14",
-  "dimensions": [
+  "calculated_measures": [
     {
-      "name": "Date",
-      "type": "DATE",
-      "hierarchy": ["Year", "Quarter", "Month"],
-      "description": "Transaction date with year-quarter-month hierarchy"
+      "name": "Gross_Profit",
+      "formula": "Revenue - CostOfGoodsSold",
+      "description": "Profit after direct costs"
     },
     {
-      "name": "Account_Type", 
-      "type": "GENERIC",
-      "values": ["Revenue", "COGS", "Expense", "Asset", "Liability", "Equity"],
-      "description": "Category of financial account"
-    },
-    {
-      "name": "Department",
-      "type": "GENERIC",
-      "values": ["Sales", "Marketing", "R&D", "Operations", "Executive"],
-      "description": "Company department responsible for the transaction"
-    }
-  ],
-  "measures": [
-    {
-      "name": "Actual_Amount",
-      "type": "AMOUNT",
-      "format": "Currency (USD)",
-      "aggregation": "SUM",
-      "description": "Actual monetary value from transactions"
-    },
-    {
-      "name": "Budget_Amount",
-      "type": "AMOUNT", 
-      "format": "Currency (USD)",
-      "aggregation": "SUM",
-      "description": "Budgeted or planned monetary value"
-    },
-    {
-      "name": "Variance",
-      "type": "CALCULATED",
-      "formula": "Budget_Amount - Actual_Amount",
-      "description": "Difference between budget and actual amounts"
-    },
-    {
-      "name": "Variance_Percentage",
-      "type": "CALCULATED", 
-      "formula": "(Budget_Amount - Actual_Amount) / Budget_Amount",
+      "name": "Gross_Margin",
+      "formula": "(Revenue - CostOfGoodsSold) / Revenue",
       "format": "Percentage",
-      "description": "Variance as percentage of budget"
+      "description": "Gross profit as percentage of revenue"
+    },
+    {
+      "name": "Operating_Margin",
+      "formula": "NetIncome / Revenue", 
+      "format": "Percentage",
+      "description": "Operating efficiency percentage"
+    },
+    {
+      "name": "ROE",
+      "formula": "NetIncome / Equity",
+      "format": "Percentage", 
+      "description": "Return on Equity"
     }
-  ],
-  "planning_enabled": true,
-  "version_dimension": {
-    "name": "Scenario",
-    "values": ["Actual", "Plan", "Forecast"]
-  }
+  ]
 }
-

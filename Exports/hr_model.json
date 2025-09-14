@@ -1,0 +1,68 @@
+{
+  "model_name": "HR_Model",
+  "data_source": "hr_data.csv", 
+  "last_updated": "2025-09-14",
+  "dimensions": [
+    {
+      "name": "Date",
+      "type": "DATE",
+      "hierarchy": ["Year", "Month"],
+      "description": "Monthly HR data snapshot"
+    },
+    {
+      "name": "Department",
+      "type": "GENERIC",
+      "values": ["Sales", "Marketing", "R&D", "Operations", "Executive", "HR"],
+      "description": "Employee department"
+    },
+    {
+      "name": "Job_Role",
+      "type": "GENERIC",
+      "values": ["Sales Executive", "Software Engineer", "Marketing Manager", "HR Specialist"],
+      "description": "Specific job title"
+    },
+    {
+      "name": "Location",
+      "type": "GENERIC",
+      "values": ["New York", "London", "Tokyo", "Berlin", "Remote"],
+      "description": "Office location or work arrangement"
+    }
+  ],
+  "measures": [
+    {
+      "name": "Headcount",
+      "type": "COUNT",
+      "aggregation": "SUM",
+      "description": "Number of active employees"
+    },
+    {
+      "name": "Attrition_Count",
+      "type": "COUNT",
+      "aggregation": "SUM", 
+      "description": "Number of employees who left"
+    },
+    {
+      "name": "Attrition_Rate",
+      "type": "CALCULATED",
+      "formula": "Attrition_Count / Headcount",
+      "format": "Percentage",
+      "description": "Percentage of employees who left"
+    },
+    {
+      "name": "Hiring_Count",
+      "type": "COUNT",
+      "aggregation": "SUM",
+      "description": "Number of new hires"
+    },
+    {
+      "name": "Open_Positions",
+      "type": "COUNT",
+      "aggregation": "SUM",
+      "description": "Number of unfilled positions"
+    }
+  ],
+  "predictive_features": {
+    "attrition_prediction": true,
+    "key_influencers_analysis": true
+  }
+}

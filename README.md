@@ -26,6 +26,6 @@ This project demonstrates my skills in SAP Analytics Cloud through three functio
 4. Build visualizations as documented
 
 ## Dashboard Screenshots
-![Finance Dashboard](screenshots/finance_dashboard.png)
+![Finance Dashboard](Desmos/Finance Dashboard.png)
 ![Sales Dashboard](screenshots/sales_dashboard.png)
 ![HR Dashboard](screenshots/hr_dashboard.png)

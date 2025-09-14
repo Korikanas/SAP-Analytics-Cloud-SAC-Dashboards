@@ -1,27 +1,123 @@
 {
+  "model_name": "Finance_Performance_Model",
+  "data_source": "financial_performance_dataset.csv",
+  "description": "Financial performance model for tracking P&L, Balance Sheet, and key financial ratios over time.",
+  "last_updated": "2025-09-14",
+  "dimensions": [
+    {
+      "name": "Date",
+      "type": "DATE",
+      "source_column": "Month",
+      "date_format": "MMM-YY",
+      "hierarchy": ["Year", "Quarter", "Month"],
+      "description": "Financial reporting period with year-quarter-month hierarchy"
+    }
+  ],
+  "measures": [
+    {
+      "name": "Revenue",
+      "type": "AMOUNT",
+      "source_column": "Revenue",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Total sales revenue"
+    },
+    {
+      "name": "CostOfGoodsSold",
+      "type": "AMOUNT",
+      "source_column": "CostOfGoodsSold",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Direct costs of producing goods"
+    },
+    {
+      "name": "OperatingExpenses",
+      "type": "AMOUNT",
+      "source_column": "OperatingExpenses",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Indirect business operating costs"
+    },
+    {
+      "name": "NetIncome",
+      "type": "AMOUNT",
+      "source_column": "NetIncome",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Revenue minus all expenses"
+    },
+    {
+      "name": "Assets",
+      "type": "AMOUNT",
+      "source_column": "Assets",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Company-owned resources"
+    },
+    {
+      "name": "Liabilities",
+      "type": "AMOUNT",
+      "source_column": "Liabilities",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Company debts and obligations"
+    },
+    {
+      "name": "Equity",
+      "type": "AMOUNT",
+      "source_column": "Equity",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Assets minus Liabilities"
+    }
+  ],
   "calculated_measures": [
     {
       "name": "Gross_Profit",
+      "type": "CALCULATED",
       "formula": "Revenue - CostOfGoodsSold",
+      "format": "Currency (USD)",
       "description": "Profit after direct costs"
     },
     {
       "name": "Gross_Margin",
+      "type": "CALCULATED",
       "formula": "(Revenue - CostOfGoodsSold) / Revenue",
       "format": "Percentage",
       "description": "Gross profit as percentage of revenue"
     },
     {
       "name": "Operating_Margin",
-      "formula": "NetIncome / Revenue", 
+      "type": "CALCULATED",
+      "formula": "NetIncome / Revenue",
       "format": "Percentage",
       "description": "Operating efficiency percentage"
     },
     {
       "name": "ROE",
+      "type": "CALCULATED",
       "formula": "NetIncome / Equity",
-      "format": "Percentage", 
+      "format": "Percentage",
       "description": "Return on Equity"
+    },
+    {
+      "name": "Current_Ratio",
+      "type": "CALCULATED",
+      "formula": "Assets / Liabilities",
+      "format": "Number",
+      "description": "Liquidity ratio (Assets vs Liabilities)"
     }
-  ]
+  ],
+  "planning_enabled": true,
+  "version_dimension": {
+    "name": "Scenario",
+    "values": ["Actual", "Plan", "Forecast", "Budget"]
+  },
+  "time_series_forecasting": {
+    "enabled": true,
+    "target_measures": ["Revenue", "NetIncome"],
+    "date_dimension": "Date",
+    "periodicity": "Monthly"
+  },
+  "default_currency": "USD"
 }

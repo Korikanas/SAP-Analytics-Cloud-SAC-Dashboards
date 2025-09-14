@@ -1,16 +1,106 @@
 {
+  "model_name": "Sales_Analytics_Model",
+  "data_source": "sales_dataset_sample.csv",
+  "description": "Sales performance model for analyzing orders, regional performance, product categories, and profitability.",
+  "last_updated": "2025-09-14",
+  "dimensions": [
+    {
+      "name": "OrderID",
+      "type": "GENERIC",
+      "source_column": "OrderID",
+      "description": "Unique order identifier"
+    },
+    {
+      "name": "OrderDate",
+      "type": "DATE",
+      "source_column": "OrderDate",
+      "date_format": "YYYY-MM-DD",
+      "hierarchy": ["Year", "Quarter", "Month", "Day"],
+      "description": "Date of order transaction"
+    },
+    {
+      "name": "Region",
+      "type": "GENERIC",
+      "source_column": "Region",
+      "values": ["East", "West", "South", "Central"],
+      "geo_enrichment": true,
+      "description": "Geographic sales region for mapping"
+    },
+    {
+      "name": "Category",
+      "type": "GENERIC",
+      "source_column": "Category",
+      "values": ["Furniture", "Technology", "Office Supplies"],
+      "description": "Product category for high-level analysis"
+    },
+    {
+      "name": "ProductName",
+      "type": "GENERIC",
+      "source_column": "ProductName",
+      "description": "Specific product name for detailed analysis"
+    }
+  ],
+  "measures": [
+    {
+      "name": "Sales",
+      "type": "AMOUNT",
+      "source_column": "Sales",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Total sales amount per order"
+    },
+    {
+      "name": "Quantity",
+      "type": "NUMBER",
+      "source_column": "Quantity",
+      "format": "Number",
+      "aggregation": "SUM",
+      "description": "Number of units sold per order"
+    },
+    {
+      "name": "Profit",
+      "type": "AMOUNT",
+      "source_column": "Profit",
+      "format": "Currency (USD)",
+      "aggregation": "SUM",
+      "description": "Profit amount per order"
+    }
+  ],
   "calculated_measures": [
     {
       "name": "Profit_Margin",
+      "type": "CALCULATED",
       "formula": "Profit / Sales",
       "format": "Percentage",
       "description": "Profit as percentage of sales"
     },
     {
       "name": "Avg_Order_Value",
+      "type": "CALCULATED",
       "formula": "Sales / Quantity",
-      "format": "Currency",
-      "description": "Average value per order"
+      "format": "Currency (USD)",
+      "description": "Average value per order item"
+    },
+    {
+      "name": "Profit_Per_Unit",
+      "type": "CALCULATED",
+      "formula": "Profit / Quantity",
+      "format": "Currency (USD)",
+      "description": "Average profit per unit sold"
     }
-  ]
+  ],
+  "hierarchies": [
+    {
+      "name": "Product_Hierarchy",
+      "levels": ["Category", "ProductName"],
+      "description": "Drill-down from category to specific products"
+    }
+  ],
+  "time_series_forecasting": {
+    "enabled": true,
+    "target_measures": ["Sales", "Profit"],
+    "date_dimension": "OrderDate",
+    "periodicity": "Daily"
+  },
+  "default_currency": "USD"
 }

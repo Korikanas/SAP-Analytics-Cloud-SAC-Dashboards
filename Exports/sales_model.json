@@ -1,65 +1,16 @@
 {
-  "model_name": "Sales_Model", 
-  "data_source": "sales_data.csv",
-  "last_updated": "2025-09-14",
-  "dimensions": [
-    {
-      "name": "Date",
-      "type": "DATE",
-      "hierarchy": ["Year", "Quarter", "Month"],
-      "description": "Sales transaction date"
-    },
-    {
-      "name": "Region",
-      "type": "GENERIC",
-      "values": ["North America", "Europe", "Asia", "South America"],
-      "description": "Geographic sales region"
-    },
-    {
-      "name": "Product_Category",
-      "type": "GENERIC",
-      "values": ["Technology", "Furniture", "Office Supplies"],
-      "description": "Category of product sold"
-    },
-    {
-      "name": "Sales_Stage",
-      "type": "GENERIC",
-      "values": ["Lead", "Qualified Lead", "Proposal", "Negotiation", "Closed Won", "Closed Lost"],
-      "description": "Stage in sales pipeline"
-    }
-  ],
-  "measures": [
-    {
-      "name": "Sales_Amount",
-      "type": "AMOUNT",
-      "format": "Currency (USD)",
-      "aggregation": "SUM",
-      "description": "Total value of sales"
-    },
-    {
-      "name": "Quantity",
-      "type": "NUMBER",
-      "aggregation": "SUM",
-      "description": "Number of units sold"
-    },
-    {
-      "name": "Profit",
-      "type": "AMOUNT",
-      "format": "Currency (USD)",
-      "aggregation": "SUM",
-      "description": "Profit from sales"
-    },
+  "calculated_measures": [
     {
       "name": "Profit_Margin",
-      "type": "CALCULATED",
-      "formula": "Profit / Sales_Amount",
+      "formula": "Profit / Sales",
       "format": "Percentage",
       "description": "Profit as percentage of sales"
+    },
+    {
+      "name": "Avg_Order_Value",
+      "formula": "Sales / Quantity",
+      "format": "Currency",
+      "description": "Average value per order"
     }
-  ],
-  "predictive_features": {
-    "time_series_forecasting": true,
-    "target_measure": "Sales_Amount",
-    "date_dimension": "Date"
-  }
+  ]
 }

@@ -1,68 +1,109 @@
 {
-  "model_name": "HR_Model",
-  "data_source": "hr_data.csv", 
+  "model_name": "HR_Analytics_Model",
+  "data_source": "hr_analytics_sample.csv",
+  "description": "HR analytics model for tracking employee attrition, demographics, compensation, and retention metrics.",
   "last_updated": "2025-09-14",
   "dimensions": [
     {
-      "name": "Date",
-      "type": "DATE",
-      "hierarchy": ["Year", "Month"],
-      "description": "Monthly HR data snapshot"
+      "name": "EmployeeID",
+      "type": "GENERIC",
+      "source_column": "EmployeeID",
+      "description": "Unique employee identifier"
+    },
+    {
+      "name": "Attrition",
+      "type": "GENERIC",
+      "source_column": "Attrition",
+      "values": ["Yes", "No"],
+      "description": "Whether employee left the company (key metric)"
     },
     {
       "name": "Department",
       "type": "GENERIC",
-      "values": ["Sales", "Marketing", "R&D", "Operations", "Executive", "HR"],
-      "description": "Employee department"
+      "source_column": "Department",
+      "values": ["Sales", "Research & Development", "Human Resources"],
+      "description": "Employee department for organizational analysis"
     },
     {
-      "name": "Job_Role",
+      "name": "JobRole",
       "type": "GENERIC",
-      "values": ["Sales Executive", "Software Engineer", "Marketing Manager", "HR Specialist"],
-      "description": "Specific job title"
+      "source_column": "JobRole",
+      "values": [
+        "Sales Executive", "Sales Representative", 
+        "Research Scientist", "Laboratory Technician", "Healthcare Representative",
+        "Human Resources Specialist", "Human Resources Manager"
+      ],
+      "description": "Specific job title and role"
     },
     {
-      "name": "Location",
+      "name": "EducationField",
       "type": "GENERIC",
-      "values": ["New York", "London", "Tokyo", "Berlin", "Remote"],
-      "description": "Office location or work arrangement"
+      "source_column": "EducationField",
+      "values": ["Marketing", "Life Sciences", "Human Resources", "Medical"],
+      "description": "Field of educational background"
     }
   ],
   "measures": [
     {
-      "name": "Headcount",
-      "type": "COUNT",
-      "aggregation": "SUM",
-      "description": "Number of active employees"
+      "name": "Age",
+      "type": "NUMBER",
+      "source_column": "Age",
+      "format": "Number",
+      "aggregation": "AVG",
+      "description": "Employee age (use average for analysis)"
     },
     {
-      "name": "Attrition_Count",
-      "type": "COUNT",
-      "aggregation": "SUM", 
-      "description": "Number of employees who left"
+      "name": "MonthlyIncome",
+      "type": "AMOUNT",
+      "source_column": "MonthlyIncome",
+      "format": "Currency (USD)",
+      "aggregation": "AVG",
+      "description": "Monthly salary (use average for analysis)"
     },
+    {
+      "name": "YearsAtCompany",
+      "type": "NUMBER",
+      "source_column": "YearsAtCompany",
+      "format": "Number",
+      "aggregation": "AVG",
+      "description": "Tenure in years (use average for analysis)"
+    }
+  ],
+  "calculated_measures": [
     {
       "name": "Attrition_Rate",
       "type": "CALCULATED",
-      "formula": "Attrition_Count / Headcount",
+      "formula": "COUNT(IF [Attrition] = 'Yes') / COUNT([EmployeeID])",
       "format": "Percentage",
-      "description": "Percentage of employees who left"
+      "description": "Percentage of employees who left the company"
     },
     {
-      "name": "Hiring_Count",
-      "type": "COUNT",
-      "aggregation": "SUM",
-      "description": "Number of new hires"
+      "name": "Avg_Tenure",
+      "type": "CALCULATED",
+      "formula": "AVG([YearsAtCompany])",
+      "format": "Number",
+      "description": "Average years at company across all employees"
     },
     {
-      "name": "Open_Positions",
-      "type": "COUNT",
-      "aggregation": "SUM",
-      "description": "Number of unfilled positions"
+      "name": "Total_Headcount",
+      "type": "CALCULATED",
+      "formula": "COUNT([EmployeeID])",
+      "format": "Number",
+      "description": "Total number of employees in dataset"
+    },
+    {
+      "name": "Attrition_Count",
+      "type": "CALCULATED",
+      "formula": "COUNT(IF [Attrition] = 'Yes')",
+      "format": "Number",
+      "description": "Total number of employees who left"
     }
   ],
   "predictive_features": {
-    "attrition_prediction": true,
-    "key_influencers_analysis": true
-  }
+    "key_influencers_analysis": true,
+    "target_variable": "Attrition",
+    "influencer_variables": ["Department", "JobRole", "MonthlyIncome", "YearsAtCompany", "Age", "EducationField"],
+    "description": "Predictive analysis to identify key factors driving employee attrition"
+  },
+  "default_currency": "USD"
 }

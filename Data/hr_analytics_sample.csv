@@ -1,0 +1,51 @@
+EmployeeID,Age,Attrition,Department,JobRole,MonthlyIncome,YearsAtCompany,EducationField
+E001,29,Yes,Sales,Sales Executive,4200,2,Marketing
+E002,35,No,Research & Development,Laboratory Technician,4800,5,Life Sciences
+E003,41,No,Human Resources,Human Resources Specialist,5300,8,Human Resources
+E004,28,Yes,Sales,Sales Representative,3100,1,Marketing
+E005,39,No,Research & Development,Research Scientist,6200,7,Life Sciences
+E006,45,No,Sales,Sales Executive,7600,12,Marketing
+E007,32,Yes,Research & Development,Laboratory Technician,4000,3,Medical
+E008,38,No,Research & Development,Healthcare Representative,6900,10,Medical
+E009,27,Yes,Sales,Sales Representative,2900,1,Marketing
+E010,34,No,Human Resources,Human Resources Specialist,5400,6,Human Resources
+E011,42,No,Research & Development,Research Scientist,7100,14,Life Sciences
+E012,30,Yes,Sales,Sales Executive,4500,2,Marketing
+E013,36,No,Research & Development,Laboratory Technician,5000,5,Medical
+E014,40,No,Sales,Sales Executive,6800,9,Marketing
+E015,31,Yes,Research & Development,Research Scientist,4700,3,Life Sciences
+E016,46,No,Human Resources,Human Resources Manager,8900,15,Human Resources
+E017,29,Yes,Sales,Sales Representative,3200,2,Marketing
+E018,33,No,Research & Development,Laboratory Technician,5100,4,Life Sciences
+E019,37,No,Research & Development,Healthcare Representative,6500,8,Medical
+E020,28,Yes,Sales,Sales Executive,4300,1,Marketing
+E021,35,No,Research & Development,Research Scientist,6000,7,Life Sciences
+E022,44,No,Sales,Sales Executive,7400,12,Marketing
+E023,30,Yes,Research & Development,Laboratory Technician,4200,2,Medical
+E024,39,No,Research & Development,Healthcare Representative,6900,9,Medical
+E025,27,Yes,Human Resources,Human Resources Specialist,3100,1,Human Resources
+E026,41,No,Research & Development,Research Scientist,7200,13,Life Sciences
+E027,34,Yes,Sales,Sales Executive,4600,3,Marketing
+E028,36,No,Research & Development,Laboratory Technician,5300,6,Medical
+E029,38,No,Research & Development,Healthcare Representative,6700,10,Life Sciences
+E030,29,Yes,Sales,Sales Representative,3300,2,Marketing
+E031,40,No,Research & Development,Research Scientist,7100,11,Life Sciences
+E032,32,Yes,Human Resources,Human Resources Specialist,4200,3,Human Resources
+E033,45,No,Sales,Sales Executive,7800,14,Marketing
+E034,31,Yes,Research & Development,Laboratory Technician,4800,2,Medical
+E035,37,No,Research & Development,Research Scientist,6400,7,Life Sciences
+E036,43,No,Research & Development,Healthcare Representative,7300,13,Medical
+E037,28,Yes,Sales,Sales Representative,3100,1,Marketing
+E038,39,No,Research & Development,Research Scientist,6900,9,Life Sciences
+E039,35,Yes,Human Resources,Human Resources Specialist,5100,4,Human Resources
+E040,30,No,Sales,Sales Executive,4500,3,Marketing
+E041,42,No,Research & Development,Research Scientist,7200,12,Life Sciences
+E042,33,Yes,Sales,Sales Representative,3400,2,Marketing
+E043,36,No,Research & Development,Laboratory Technician,5600,6,Medical
+E044,38,No,Research & Development,Healthcare Representative,6800,9,Medical
+E045,29,Yes,Sales,Sales Executive,4000,2,Marketing
+E046,41,No,Research & Development,Research Scientist,7100,11,Life Sciences
+E047,27,Yes,Human Resources,Human Resources Specialist,3200,1,Human Resources
+E048,44,No,Sales,Sales Executive,7500,13,Marketing
+E049,31,Yes,Research & Development,Laboratory Technician,4700,3,Medical
+E050,37,No,Research & Development,Research Scientist,6400,8,Life Sciences

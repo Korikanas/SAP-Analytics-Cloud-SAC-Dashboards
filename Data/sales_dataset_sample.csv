@@ -1,0 +1,51 @@
+OrderID,OrderDate,Region,Category,ProductName,Sales,Quantity,Profit
+O001,2023-01-05,East,Furniture,Office Chair,250.0,2,45.0
+O002,2023-01-08,West,Technology,Laptop,1200.0,1,200.0
+O003,2023-01-12,South,Office Supplies,Stapler,25.0,5,8.0
+O004,2023-01-15,Central,Furniture,Conference Table,850.0,1,120.0
+O005,2023-01-18,East,Technology,Smartphone,699.0,2,150.0
+O006,2023-01-22,West,Office Supplies,Printer Paper,60.0,10,15.0
+O007,2023-01-25,South,Furniture,Bookshelf,300.0,1,50.0
+O008,2023-01-29,Central,Technology,Tablet,450.0,2,90.0
+O009,2023-02-02,East,Office Supplies,Pens Pack,15.0,6,5.0
+O010,2023-02-06,West,Furniture,Desk,400.0,1,70.0
+O011,2023-02-10,South,Technology,Monitor,220.0,2,40.0
+O012,2023-02-14,Central,Office Supplies,Notebooks,50.0,4,12.0
+O013,2023-02-18,East,Furniture,Office Chair,260.0,1,48.0
+O014,2023-02-22,West,Technology,Printer,350.0,1,60.0
+O015,2023-02-26,South,Office Supplies,Markers,20.0,5,6.0
+O016,2023-03-02,Central,Furniture,Filing Cabinet,500.0,1,80.0
+O017,2023-03-06,East,Technology,Keyboard,80.0,3,18.0
+O018,2023-03-10,West,Office Supplies,Binders,45.0,4,10.0
+O019,2023-03-14,South,Furniture,Office Desk,600.0,1,100.0
+O020,2023-03-18,Central,Technology,Headphones,120.0,2,25.0
+O021,2023-03-22,East,Office Supplies,Envelopes,30.0,6,8.0
+O022,2023-03-26,West,Furniture,Standing Desk,700.0,1,110.0
+O023,2023-03-30,South,Technology,Webcam,95.0,2,20.0
+O024,2023-04-03,Central,Office Supplies,Paper Clips,12.0,10,4.0
+O025,2023-04-07,East,Furniture,Bookshelf,310.0,1,52.0
+O026,2023-04-11,West,Technology,Laptop,1150.0,1,190.0
+O027,2023-04-15,South,Office Supplies,Highlighters,18.0,4,5.0
+O028,2023-04-19,Central,Furniture,Office Chair,270.0,2,50.0
+O029,2023-04-23,East,Technology,Smartphone,720.0,1,155.0
+O030,2023-04-27,West,Office Supplies,Printer Ink,95.0,3,22.0
+O031,2023-05-01,South,Furniture,Conference Table,900.0,1,130.0
+O032,2023-05-05,Central,Technology,Mouse,40.0,3,10.0
+O033,2023-05-09,East,Office Supplies,Scissors,25.0,2,7.0
+O034,2023-05-13,West,Furniture,File Cabinet,480.0,1,75.0
+O035,2023-05-17,South,Technology,Tablet,460.0,2,92.0
+O036,2023-05-21,Central,Office Supplies,Sticky Notes,15.0,6,5.0
+O037,2023-05-25,East,Furniture,Desk,420.0,1,72.0
+O038,2023-05-29,West,Technology,Projector,650.0,1,120.0
+O039,2023-06-02,South,Office Supplies,Stapler,22.0,3,7.0
+O040,2023-06-06,Central,Furniture,Bookshelf,305.0,1,50.0
+O041,2023-06-10,East,Technology,Monitor,210.0,2,38.0
+O042,2023-06-14,West,Office Supplies,Printer Paper,65.0,8,16.0
+O043,2023-06-18,South,Furniture,Office Chair,255.0,1,46.0
+O044,2023-06-22,Central,Technology,Keyboard,85.0,2,20.0
+O045,2023-06-26,East,Office Supplies,Notebooks,55.0,5,13.0
+O046,2023-06-30,West,Furniture,Conference Table,880.0,1,125.0
+O047,2023-07-04,South,Technology,Headphones,115.0,2,23.0
+O048,2023-07-08,Central,Office Supplies,Pens Pack,18.0,5,6.0
+O049,2023-07-12,East,Furniture,File Cabinet,510.0,1,82.0
+O050,2023-07-16,West,Technology,Smartphone,730.0,1,160.0

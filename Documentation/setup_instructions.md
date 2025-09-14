@@ -48,3 +48,28 @@
 *   Use your browser's screenshot tool (or a tool like Lightshot) to capture the full dashboard.
 *   Save the images as `.png` files in the `screenshots/` directory.
 *   Ensure the images are clear and showcase the main features.
+
+## Data Import Steps for Each Dataset
+
+### Financial Data Import:
+1. In SAC Modeler, click **+ → Import from File**
+2. Upload `financial_performance_dataset.csv`
+3. **Critical Step:** Convert the "Month" column to proper date format:
+   - Select the "Month" column
+   - Change type to **Date**
+   - Set date format to `MMM-YY` (e.g., Jan-23)
+4. Create hierarchy: **Year → Quarter → Month**
+5. Set all numeric columns as **Measures** with Currency format
+
+### HR Data Import:
+1. Upload `hr_analytics_sample.csv`
+2. Set "EmployeeID", "Attrition", "Department", "JobRole", "EducationField" as **Dimensions**
+3. Set "Age", "MonthlyIncome", "YearsAtCompany" as **Measures**
+4. For "MonthlyIncome", set aggregation to **Average** for meaningful analysis
+
+### Sales Data Import:
+1. Upload `sales_dataset_sample.csv`
+2. Set "OrderDate" as **Date** dimension with hierarchy: **Year → Quarter → Month → Day**
+3. Set "Region", "Category", "ProductName" as **Dimensions**
+4. Set "Sales", "Quantity", "Profit" as **Measures**
+5. Enable **Geo Enrichment** for "Region" to enable map visualizations
